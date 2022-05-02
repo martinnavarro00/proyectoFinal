@@ -56,7 +56,7 @@ El hardware prefetching usa mecanismos de hardware específicos para predecir da
 ### Tipos 
 ```
 -Sequential prefetching: Este método utiliza el principio de localidad espacial. Esto quiere decir que los datos que se acceden juntos son más probables que se almacenen juntos. El cache prefecthing se realiza normalmente en bloques para aprovechar esta técnica.  
-
+**
 Es decir, que se realizar un prefetch del bloque A+1, cuando el bloque A es accesado. 
 
 -Strided prefetching: En este caso analiza y monitorea las diferencias entre las direcciones de los accesos a memoria y busca patrones. Ya sean patrones regulares o irregulares.  
@@ -64,12 +64,40 @@ Es decir, que se realizar un prefetch del bloque A+1, cuando el bloque A es acce
   -Regulares: Para este caso, los accesos de memoria están 𝑠 direcciones aparte. Es decir que, el prefetcher calcula 𝑠, y usa para calcular la dirección de memoria para realizar el prefetching.  
 
   -Irregulares: Para este caso, el acceso es variable, pero de todas formas sigue un patrón. Los prefetchers son más complejos, pero aprovechan esta propiedad para predecir accesos futuros 
- 
  ```
 ## Ventajas y Desventajas
-You can use the [editor on GitHub](https://github.com/martinnavarro00/proyectoFinal/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+### Ventajas
+En el hardware las ventajas que tiene el método de prefetching son: 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+-Tiene información dinámica que permite reconocer errores que no son esperados en el cache y que son difíciles para el compilador de predecir 
+
+-No se necesita instrucciones extra que utilicen recursos de ejecución 
+
+### Software 
+
+-Tiene mayor alcance  
+
+-Se puede hacer prefecth a estructura de datos irregulares 
+
+-Se puede entrenar al prefetch con muchos menos datos, mientras que en hardware esto no se puede 
+
+### Desventajas
+-Detectar los patrones de acceso de memoria 
+
+-Se necesita un espacio en el cache para almacenar el prefeched data, si es que esa data por algún caso no es utilizada entonces el perfomance se reduce. 
+
+
+-Cuando hay muchos datos o branches hay probabilidad de que los datos predicados no sean los deseados. 
+
+ 
+
+### Software 
+
+-En el caso del software el prefechting requiere y consumo muchos más recursos que si se lo haría en hardware. 
+
+-El rango también es un problema, para ambos (hardware y software) ya que los parámetros que se les entrega son staticos y no se adaptan al tiempo de ejecucion 
+
+-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
 ### Markdown
 
@@ -88,7 +116,7 @@ Syntax highlighted code block
 1. Numbered
 2. List
 
-**Bold** and _Italic_ and `Code` text
+**as** and _Italic_ and `Code` text
 
 [Link](url) and ![Image](src)
 ```
