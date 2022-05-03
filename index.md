@@ -62,13 +62,17 @@ El cache prefecthing se realiza normalmente en bloques para aprovechar esta téc
 Es decir, que se realizar un prefetch del bloque A+1, cuando el bloque A es accesado. 
 
 -**Strided prefetching:** En este caso analiza y monitorea las diferencias entre las 
-direcciones de los accesos a memoria y busca patrones. Ya sean patrones regulares o irregulares.  
+direcciones de los accesos a memoria y busca patrones. Ya sean patrones 
+regulares o irregulares.  
 
   -**Regulares:** Para este caso, los accesos de memoria están 𝑠 direcciones aparte.
-  Es decir que, el prefetcher calcula 𝑠, y usa para calcular la dirección de memoria para realizar el prefetching.  
+  Es decir que, el prefetcher calcula 𝑠, y usa para calcular la dirección de 
+  memoria para realizar el prefetching.  
 
-  -**Irregulares:** Para este caso, el acceso es variable, pero de todas formas sigue un patrón. 
-  Los prefetchers son más complejos, pero aprovechan esta propiedad para predecir accesos futuros 
+  -**Irregulares:** Para este caso, el acceso es variable, pero de todas formas 
+  sigue un patrón. 
+  Los prefetchers son más complejos, pero aprovechan esta propiedad 
+  para predecir accesos futuros 
  ```
 # Ventajas y Desventajas
 ## Ventajas
