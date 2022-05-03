@@ -204,7 +204,11 @@ int main(void){
 }
 ```
 # Gráficos
-###Strided Prefetching
+### Strided Prefetching
+![Image](hardware_tabla.jpeg)
+
+### Hardware Prefetching
+![Image](hardware_grafico.jpeg)
 
 
 # Ventajas y Desventajas
