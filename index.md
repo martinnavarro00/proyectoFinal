@@ -55,18 +55,23 @@ El hardware prefetching usa mecanismos de hardware específicos para predecir da
 
 ### Tipos 
 ```markdown
--**Sequential prefetching:** Este método utiliza el principio de localidad espacial. Esto quiere decir que los datos que se acceden juntos son más probables que se almacenen juntos. El cache prefecthing se realiza normalmente en bloques para aprovechar esta técnica.  
+-**Sequential prefetching:** Este método utiliza el principio de localidad espacial. 
+Esto quiere decir que los datos que se acceden juntos son más probables que se almacenen juntos. 
+El cache prefecthing se realiza normalmente en bloques para aprovechar esta técnica.  
 
 Es decir, que se realizar un prefetch del bloque A+1, cuando el bloque A es accesado. 
 
--**Strided prefetching:** En este caso analiza y monitorea las diferencias entre las direcciones de los accesos a memoria y busca patrones. Ya sean patrones regulares o irregulares.  
+-**Strided prefetching:** En este caso analiza y monitorea las diferencias entre las 
+direcciones de los accesos a memoria y busca patrones. Ya sean patrones regulares o irregulares.  
 
-  -**Regulares:** Para este caso, los accesos de memoria están 𝑠 direcciones aparte. Es decir que, el prefetcher calcula 𝑠, y usa para calcular la dirección de memoria para realizar el prefetching.  
+  -**Regulares:** Para este caso, los accesos de memoria están 𝑠 direcciones aparte.
+  Es decir que, el prefetcher calcula 𝑠, y usa para calcular la dirección de memoria para realizar el prefetching.  
 
-  -**Irregulares:** Para este caso, el acceso es variable, pero de todas formas sigue un patrón. Los prefetchers son más complejos, pero aprovechan esta propiedad para predecir accesos futuros 
+  -**Irregulares:** Para este caso, el acceso es variable, pero de todas formas sigue un patrón. 
+  Los prefetchers son más complejos, pero aprovechan esta propiedad para predecir accesos futuros 
  ```
-## Ventajas y Desventajas
-### Ventajas
+# Ventajas y Desventajas
+## Ventajas
 En el hardware las ventajas que tiene el método de prefetching son: 
 
 -Tiene información dinámica que permite reconocer errores que no son esperados en el cache y que son difíciles para el compilador de predecir 
@@ -81,7 +86,7 @@ En el hardware las ventajas que tiene el método de prefetching son:
 
 -Se puede entrenar al prefetch con muchos menos datos, mientras que en hardware esto no se puede 
 
-### Desventajas
+## Desventajas
 -Detectar los patrones de acceso de memoria 
 
 -Se necesita un espacio en el cache para almacenar el prefeched data, si es que esa data por algún caso no es utilizada entonces el perfomance se reduce. 
