@@ -54,16 +54,16 @@ El software prefetching depende de que el programador o el compilador coloque ex
 El hardware prefetching usa mecanismos de hardware específicos para predecir datos que se necesitarán en un futuro próximo. Para estas técnicas, no es necesaria la intervención del compilador o del programador.  
 
 ### Tipos 
-```
--Sequential prefetching: Este método utiliza el principio de localidad espacial. Esto quiere decir que los datos que se acceden juntos son más probables que se almacenen juntos. El cache prefecthing se realiza normalmente en bloques para aprovechar esta técnica.  
-**
+```markdown
+-**Sequential prefetching:** Este método utiliza el principio de localidad espacial. Esto quiere decir que los datos que se acceden juntos son más probables que se almacenen juntos. El cache prefecthing se realiza normalmente en bloques para aprovechar esta técnica.  
+
 Es decir, que se realizar un prefetch del bloque A+1, cuando el bloque A es accesado. 
 
--Strided prefetching: En este caso analiza y monitorea las diferencias entre las direcciones de los accesos a memoria y busca patrones. Ya sean patrones regulares o irregulares.  
+-**Strided prefetching:** En este caso analiza y monitorea las diferencias entre las direcciones de los accesos a memoria y busca patrones. Ya sean patrones regulares o irregulares.  
 
-  -Regulares: Para este caso, los accesos de memoria están 𝑠 direcciones aparte. Es decir que, el prefetcher calcula 𝑠, y usa para calcular la dirección de memoria para realizar el prefetching.  
+  -**Regulares:** Para este caso, los accesos de memoria están 𝑠 direcciones aparte. Es decir que, el prefetcher calcula 𝑠, y usa para calcular la dirección de memoria para realizar el prefetching.  
 
-  -Irregulares: Para este caso, el acceso es variable, pero de todas formas sigue un patrón. Los prefetchers son más complejos, pero aprovechan esta propiedad para predecir accesos futuros 
+  -**Irregulares:** Para este caso, el acceso es variable, pero de todas formas sigue un patrón. Los prefetchers son más complejos, pero aprovechan esta propiedad para predecir accesos futuros 
  ```
 ## Ventajas y Desventajas
 ### Ventajas
