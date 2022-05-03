@@ -53,19 +53,23 @@ El software prefetching depende de que el programador o el compilador coloque ex
 # Implementacion Array prefetching
 
 ## Graficos
-Ryzen 7 series 4000
+### Ryzen 7 series 4000
+
 ![Image](Ryzen_tabla.jpeg)
 ![Image](Ryzen_grafico.jpeg)
 
-Intel core i7(10th)
+### Intel core i7(10th)
+
 ![Image](i7_tabla.jpeg)
 ![Image](i7_grafico.jpeg)
 
-Intel core i5(10th)
+### Intel core i5(10th)
+
 ![Image](i5_tabla.jpeg)
 ![Image](i5_grafico.jpeg)
 
-Intel core i7(10th) Ubuntu
+### Intel core i7(10th) Ubuntu
+
 ![Image](ubuntu_tabla.jpeg)
 ![Image](ubuntu_grafico.jpeg)
 
