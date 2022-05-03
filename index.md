@@ -140,5 +140,4 @@ En el hardware las ventajas que tiene el método de prefetching son:
 -El rango también es un problema, para ambos (hardware y software) ya que los parámetros que se les entrega son staticos y no se adaptan al tiempo de ejecucion 
 
 
-
 # Conclusion
