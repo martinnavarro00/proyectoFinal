@@ -17,14 +17,16 @@ Analizar técnicas de prefetching en hardware y software.
 
 -Describir ventajas y desventajas de hardware y software prefetching. 
 
--Implementar software prefetching en un programa de Python y Java en Windows y C++ en Linux. 
+-Implementar software prefetching en diferentes dispositivos. 
 
 -Comparar el rendimiento y tiempos de ejecución de los programas cuando tienen técnicas de prefetching implementadas.
 
 ## ¿Qué es prefetching? 
-El prefetching de datos es una técnica para ocultar los errores de cache a través de la obtención de información rápida, es decir, es una especulación sobre futuros accesos de datos y almacenarlos en memoria cache. La forma más común y eficiente que se conoce de prefetch es introducir una instrucción de prefetching en el programa. 
+Es una técnica -> mínimiza errores de cache -> obtención de información rápida
 
-Adicionalmente, es importante mencionar que la técnica de prefetching utiliza recursos de ejecución del procesador. Por esta razón es importante verificar que las instrucciones que encargadas de prefetch, realicen prefetch de datos que no estén almacenados en el cache, caso contrario no trae beneficio alguno.  
+Es una especulación sobre futuros accesos de datos y almacenarlos en memoria cache. 
+
+Utiliza recursos de ejecución del procesador.  
 ![Image](prefetching.png)
 
 ### Efectividad del Prefetching 
@@ -37,11 +39,11 @@ Adicionalmente, es importante mencionar que la técnica de prefetching utiliza r
 -Tiempo: tiempo que demora un prefetch en ejecutar
 
 ## Software Prefetching 
-El software prefetching depende de que el programador o el compilador coloque explícitamente una instrucción de prefetching en la aplicación o programa para accesar a una referencia de memoria con tendencia a tener un cache miss (error de cache)
+El software prefetching depende de que el programador o el compilador coloque explícitamente una instrucción de prefetching en la aplicación o programa. 
 
 ## Tipos 
 
--Array Prefetching: Las referencias de memoria emplean “subíndices de matriz afines”. Esto quiere decir que son combinaciones lineales de un bucle con variables constantes. Los programas que emplean array prefetching, presentan una ventaja, los patrones de acceso a la memoria caché se identifican de manera precisa cuando se compila el código. Siempre y cuando se conozca la dimensión del arreglo (matriz). Es por esto que se considera que los programas que usan referencias a arreglos afines son candidatos para realizar software prefetching cuando cumplen estas condiciones.
+-Array Prefetching: Los programas que emplean array prefetching, presentan una ventaja, los patrones de acceso a la memoria caché se identifican de manera precisa cuando se compila el código. Siempre y cuando se conozca la dimensión del arreglo. 
 
 ![Image](arrayprefetch.png)
 
@@ -49,8 +51,65 @@ El software prefetching depende de que el programador o el compilador coloque ex
 
 ![Image](jumppointerprefetch.png)
 
-
 # Implementacion Array prefetching
+```markdown
+#include <stdio.h>
+#include <sys/time.h>
+#include <stdlib.h>
+#include <time.h>
+
+void delay(int milliseconds)
+{
+    long pause;
+    clock_t now,then;
+
+    pause = milliseconds*(CLOCKS_PER_SEC/1000);
+    now = then = clock();
+    while( (now-then) < pause )
+        now = clock();
+}
+
+
+int main(void) {
+  srand(time(NULL));  
+  struct timeval t1, t2;
+  double elapsedTime;
+  struct timeval t3, t4;
+  double elapsedTime2;
+  int number = 1000;
+  int a[number];
+  int b[number];
+
+  for (int i = 0; i < number; i++){
+    a[i] = rand(); 
+    b[i] = rand();
+  }
+  gettimeofday(&t1, NULL);
+  for (int i = 0; i < number; i++){
+    a[i] = a[i] + b[i];
+    delay(5);
+    
+  }
+  gettimeofday(&t2, NULL);
+  elapsedTime = (t2.tv_sec - t1.tv_sec) * 1000.0; 
+  elapsedTime += (t2.tv_usec - t1.tv_usec) / 1000.0;
+  printf("%f ms.\n", elapsedTime);
+  
+  
+  gettimeofday(&t3, NULL);
+  for (int i = 0; i < number; i++){
+    __builtin_prefetch (&a[i+4],1,1);
+    __builtin_prefetch (&b[i+4],0,1);
+    a[i] = a[i] + b[i];
+    delay(5);
+    
+  }
+  gettimeofday(&t4, NULL);
+  elapsedTime2 = (t4.tv_sec - t3.tv_sec) * 1000.0; 
+  elapsedTime2 += (t4.tv_usec - t3.tv_usec) / 1000.0;
+  printf("%f ms.\n", elapsedTime2);
+}
+```
 
 ## Graficos
 ### Ryzen 7 series 4000
@@ -141,3 +200,4 @@ En el hardware las ventajas que tiene el método de prefetching son:
 
 
 # Conclusion
+    
