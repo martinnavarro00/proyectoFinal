@@ -66,7 +66,7 @@ Intel core i5(10th)
 ![Image](i5_grafico.jpeg)
 
 Intel core i7(10th) Ubuntu
-![Image](ubuntu.jpeg)
+![Image](ubuntu_tabla.jpeg)
 ![Image](ubuntu_grafico.jpeg)
 
 ## Hardware  
