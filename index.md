@@ -72,6 +72,8 @@ direcciones de los accesos a memoria y busca patrones. Ya sean patrones regulare
  ```
 # Ventajas y Desventajas
 ## Ventajas
+
+### Hardware
 En el hardware las ventajas que tiene el método de prefetching son: 
 
 -Tiene información dinámica que permite reconocer errores que no son esperados en el cache y que son difíciles para el compilador de predecir 
@@ -87,6 +89,8 @@ En el hardware las ventajas que tiene el método de prefetching son:
 -Se puede entrenar al prefetch con muchos menos datos, mientras que en hardware esto no se puede 
 
 ## Desventajas
+
+### Hardware
 -Detectar los patrones de acceso de memoria 
 
 -Se necesita un espacio en el cache para almacenar el prefeched data, si es que esa data por algún caso no es utilizada entonces el perfomance se reduce. 
