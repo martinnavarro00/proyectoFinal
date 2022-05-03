@@ -49,6 +49,22 @@ El software prefetching depende de que el programador o el compilador coloque ex
 
 ![Image](jumppointerprefetch.png)
 
+
+# Implementacion Array prefetching
+
+## Graficos
+![Image](Ryzen_tabla.jpeg)
+![Image](Ryzen_grafico.jpeg)
+
+![Image](i7_tabla.jpeg)
+![Image](i7_grafico.jpeg)
+
+![Image](i5_tabla.jpeg)
+![Image](i5_grafico.jpeg)
+
+![Image](ubuntu.jpeg)
+![Image](ubuntu_grafico.jpeg)
+
 ## Hardware  
 
 El hardware prefetching usa mecanismos de hardware específicos para predecir datos que se necesitarán en un futuro próximo. Para estas técnicas, no es necesaria la intervención del compilador o del programador.  
@@ -74,27 +90,23 @@ regulares o irregulares.
   Los prefetchers son más complejos, pero aprovechan esta propiedad 
   para predecir accesos futuros 
  ```
-# Ventajas y Desventajas
-## Ventajas
+ 
+ 
+# Implementacion Hardware
 
-### Hardware
+# Ventajas y Desventajas
+
+## Hardware
+### Ventajas
+
+
 En el hardware las ventajas que tiene el método de prefetching son: 
 
 -Tiene información dinámica que permite reconocer errores que no son esperados en el cache y que son difíciles para el compilador de predecir 
 
 -No se necesita instrucciones extra que utilicen recursos de ejecución 
 
-### Software 
-
--Tiene mayor alcance  
-
--Se puede hacer prefecth a estructura de datos irregulares 
-
--Se puede entrenar al prefetch con muchos menos datos, mientras que en hardware esto no se puede 
-
-## Desventajas
-
-### Hardware
+### Desventajas
 -Detectar los patrones de acceso de memoria 
 
 -Se necesita un espacio en el cache para almacenar el prefeched data, si es que esa data por algún caso no es utilizada entonces el perfomance se reduce. 
@@ -102,16 +114,23 @@ En el hardware las ventajas que tiene el método de prefetching son:
 
 -Cuando hay muchos datos o branches hay probabilidad de que los datos predicados no sean los deseados. 
 
- 
+## Software 
 
-### Software 
+### Ventajas
+
+-Tiene mayor alcance  
+
+-Se puede hacer prefecth a estructura de datos irregulares 
+
+-Se puede entrenar al prefetch con muchos menos datos, mientras que en hardware esto no se puede 
+
+### Desventajas
+ 
 
 -En el caso del software el prefechting requiere y consumo muchos más recursos que si se lo haría en hardware. 
 
 -El rango también es un problema, para ambos (hardware y software) ya que los parámetros que se les entrega son staticos y no se adaptan al tiempo de ejecucion 
 
 
-# Implementacion Array prefetching
 
-# Implementacion Hardware
 # Conclusion
