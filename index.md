@@ -152,10 +152,7 @@ direcciones de los accesos a memoria, buscando patrones (regulares o irregulares
   Es decir que, el prefetcher calcula 𝑠, y usa para calcular la dirección de 
   memoria para realizar el prefetching.  
 
-  **- Irregulares:** Para este caso, el acceso es variable, pero de todas formas 
-  sigue un patrón. Los prefetchers son más complejos, pero aprovechan esta propiedad 
-  para predecir accesos futuros.
- 
+  **- Irregulares:** Para este caso, el acceso es variable, pero de todas formas el prefetcher intenta buscar un patrón.
  
 # Implementacion Hardware
 ### Software Strided Prefetching 
