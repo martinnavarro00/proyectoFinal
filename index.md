@@ -141,7 +141,7 @@ El hardware prefetching usa mecanismos de hardware específicos para predecir da
 Esto quiere decir que los datos que se acceden juntos son más probables que se almacenen juntos. 
 
 El cache prefecthing se realiza normalmente en bloques para aprovechar esta técnica.  
-Es decir, que se realizar un prefetch del bloque A+1, cuando el bloque A es accesado. 
+Es decir, que se realiza un prefetch del bloque A+1, cuando el bloque A es accesado. 
 
 
 
