@@ -45,7 +45,7 @@ El software prefetching depende de que el programador o el compilador coloque ex
 
 **-Array Prefetching:** Los programas que emplean array prefetching, presentan una ventaja, los patrones de acceso a la memoria caché se identifican de manera precisa cuando se compila el código. Siempre y cuando se conozca la dimensión del arreglo. 
 
-![Image](arrayprefetch.png)
+![Image](Array_prefetch.jpeg)
 
 **-Jump Pointer Prefetching (Queue Jumping):** Los punteros de salto se utilizan para reducir la latencia de la memoria durante el proceso de prefetching. Queue Jumping se aplica a estructuras sencillas “backbone” que contiene un solo tipo de nodos que se conectan (como un árbol o una lista). En los saltos de cola cada puntero se añade a un nodo que son utilizados para obtener la estructura completa. 	
 
