@@ -249,8 +249,14 @@ int main(void){
 - 
 
 
-# Conclusion
+# Conclusiones
+
+- El software prefetching es más eficaz y el programador tiene más control sobre esta ténica, debido a que en hardware prefetching no se tiene control sobre lo que ejecuta la máquina. 
+- Se observo que en muchas de las ocasiones, las iteraciones secuenciales presentan mejor performance que realizandolo con prefetch. Ya que siempre realizar sumas uno a uno son más simples, más rápidas para compilar. 
+- 
 
 # Referencias
+
+- 
 
     
