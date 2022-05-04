@@ -155,7 +155,6 @@ direcciones de los accesos a memoria, buscando patrones (regulares o irregulares
   **- Irregulares:** Para este caso, el acceso es variable, pero de todas formas el prefetcher intenta buscar un patrón.
  
 # Implementacion Hardware
-### Software Strided Prefetching 
 ```markdown
 #include <stdio.h>
 #include <sys/time.h>
