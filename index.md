@@ -238,7 +238,7 @@ int main(void){
 
 - Se puede hacer prefecth a estructuras de datos irregulares. 
 
-- Se puede entrenar al prefetch con muchos menos datos, mientras que en hardware esto no se puede. (Revisar)
+- Cuando se implementa software prefetching a programas necesita un soporte de hardware mínimo.
 
 ### Desventajas
 
@@ -246,7 +246,7 @@ int main(void){
 
 - El rango también es un problema, para ambos (hardware y software) ya que los parámetros que se les entrega son staticos y no se adaptan al tiempo de ejecucion.
 
-- 
+- Aumenta el tamaño de los programas, ya que explícitamente se debe escribir sentencias de 'prefetch'.
 
 
 # Conclusiones
@@ -257,6 +257,13 @@ int main(void){
 
 # Referencias
 
-- 
+- CRC Press LLC. (2001). Data Cache Prefetching. Available at: https://ece.northeastern.edu/groups/nucar/CRCBook/Drafts/7.pdf 
+- Mowry T. (2011). Compiler Algorithms for Prefetching Data. Available at: https://www.cs.cmu.edu/afs/cs/academic/class/15745-s13/public/lectures/L26-27-Data-Prefetching-1up.pdf
+- Pourdowlat P et al. (2005). Hardware Prefetching Schemes. Available at: https://www.ee.ryerson.ca/~courses/ee8207/prefetchprj3.pdf
+- Roth A. & Sohi G. (1999). Effective Jump Pointer Prefetching for Linked Data Structures. Available at: http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.391.5339&rep=rep1&type=pdf
+- Standford. (n.d). Hardware Prefetching .Available at: https://suif.stanford.edu/papers/mowry92/subsection3_5_2.html#:~:text=Hardware%2Dbased%20prefetching%20schemes%20have,instruction%20overhead%20to%20issue%20prefetches
+- Technische Unversitat Berlin. [Prof. Dr. Ben H. Juurlink] (2019). Software Prefetching to Reduce Miss Rate or Miss Penalty [Video]. Youtube. https://www.youtube.com/watch?v=EahLWVG2cNU 
+- Veidenbaum A. (1997).  Stride-directed Prefetching for Secondary Caches. Available at: https://www.ics.uci.edu/~alexv/Papers/icpp97.pdf
+
 
     
